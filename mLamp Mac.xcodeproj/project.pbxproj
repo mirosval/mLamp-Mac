@@ -1,0 +1,508 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D95085D1B85003E00A3E880 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D95085C1B85003E00A3E880 /* AppDelegate.swift */; };
+		1D95085F1B85003E00A3E880 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D95085E1B85003E00A3E880 /* Assets.xcassets */; };
+		1D9508621B85003E00A3E880 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D9508601B85003E00A3E880 /* MainMenu.xib */; };
+		1D95086D1B85003E00A3E880 /* mLamp_MacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D95086C1B85003E00A3E880 /* mLamp_MacTests.swift */; };
+		1D9508781B85003E00A3E880 /* mLamp_MacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9508771B85003E00A3E880 /* mLamp_MacUITests.swift */; };
+		1D9508861B8500C400A3E880 /* RFDuinoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9508851B8500C400A3E880 /* RFDuinoManager.swift */; };
+		1D9508881B85067A00A3E880 /* LampTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9508871B85067A00A3E880 /* LampTableDelegate.swift */; };
+		1DB8B7B41B889AA100AD46FB /* ColorCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8B7B31B889AA100AD46FB /* ColorCircleView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1D9508691B85003E00A3E880 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D9508511B85003E00A3E880 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D9508581B85003E00A3E880;
+			remoteInfo = "mLamp Mac";
+		};
+		1D9508741B85003E00A3E880 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D9508511B85003E00A3E880 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D9508581B85003E00A3E880;
+			remoteInfo = "mLamp Mac";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1D9508591B85003E00A3E880 /* mLamp Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mLamp Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D95085C1B85003E00A3E880 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1D95085E1B85003E00A3E880 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1D9508611B85003E00A3E880 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		1D9508631B85003E00A3E880 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D9508681B85003E00A3E880 /* mLamp MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mLamp MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D95086C1B85003E00A3E880 /* mLamp_MacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mLamp_MacTests.swift; sourceTree = "<group>"; };
+		1D95086E1B85003E00A3E880 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D9508731B85003E00A3E880 /* mLamp MacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mLamp MacUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D9508771B85003E00A3E880 /* mLamp_MacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mLamp_MacUITests.swift; sourceTree = "<group>"; };
+		1D9508791B85003E00A3E880 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D9508851B8500C400A3E880 /* RFDuinoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFDuinoManager.swift; sourceTree = "<group>"; };
+		1D9508871B85067A00A3E880 /* LampTableDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LampTableDelegate.swift; sourceTree = "<group>"; };
+		1DB8B7B31B889AA100AD46FB /* ColorCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCircleView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D9508561B85003E00A3E880 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D9508651B85003E00A3E880 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D9508701B85003E00A3E880 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1D9508501B85003E00A3E880 = {
+			isa = PBXGroup;
+			children = (
+				1D95085B1B85003E00A3E880 /* mLamp Mac */,
+				1D95086B1B85003E00A3E880 /* mLamp MacTests */,
+				1D9508761B85003E00A3E880 /* mLamp MacUITests */,
+				1D95085A1B85003E00A3E880 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1D95085A1B85003E00A3E880 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D9508591B85003E00A3E880 /* mLamp Mac.app */,
+				1D9508681B85003E00A3E880 /* mLamp MacTests.xctest */,
+				1D9508731B85003E00A3E880 /* mLamp MacUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1D95085B1B85003E00A3E880 /* mLamp Mac */ = {
+			isa = PBXGroup;
+			children = (
+				1D95085C1B85003E00A3E880 /* AppDelegate.swift */,
+				1D95085E1B85003E00A3E880 /* Assets.xcassets */,
+				1D9508601B85003E00A3E880 /* MainMenu.xib */,
+				1D9508631B85003E00A3E880 /* Info.plist */,
+				1D9508851B8500C400A3E880 /* RFDuinoManager.swift */,
+				1D9508871B85067A00A3E880 /* LampTableDelegate.swift */,
+				1DB8B7B31B889AA100AD46FB /* ColorCircleView.swift */,
+			);
+			path = "mLamp Mac";
+			sourceTree = "<group>";
+		};
+		1D95086B1B85003E00A3E880 /* mLamp MacTests */ = {
+			isa = PBXGroup;
+			children = (
+				1D95086C1B85003E00A3E880 /* mLamp_MacTests.swift */,
+				1D95086E1B85003E00A3E880 /* Info.plist */,
+			);
+			path = "mLamp MacTests";
+			sourceTree = "<group>";
+		};
+		1D9508761B85003E00A3E880 /* mLamp MacUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1D9508771B85003E00A3E880 /* mLamp_MacUITests.swift */,
+				1D9508791B85003E00A3E880 /* Info.plist */,
+			);
+			path = "mLamp MacUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D9508581B85003E00A3E880 /* mLamp Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D95087C1B85003E00A3E880 /* Build configuration list for PBXNativeTarget "mLamp Mac" */;
+			buildPhases = (
+				1D9508551B85003E00A3E880 /* Sources */,
+				1D9508561B85003E00A3E880 /* Frameworks */,
+				1D9508571B85003E00A3E880 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "mLamp Mac";
+			productName = "mLamp Mac";
+			productReference = 1D9508591B85003E00A3E880 /* mLamp Mac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1D9508671B85003E00A3E880 /* mLamp MacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D95087F1B85003E00A3E880 /* Build configuration list for PBXNativeTarget "mLamp MacTests" */;
+			buildPhases = (
+				1D9508641B85003E00A3E880 /* Sources */,
+				1D9508651B85003E00A3E880 /* Frameworks */,
+				1D9508661B85003E00A3E880 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1D95086A1B85003E00A3E880 /* PBXTargetDependency */,
+			);
+			name = "mLamp MacTests";
+			productName = "mLamp MacTests";
+			productReference = 1D9508681B85003E00A3E880 /* mLamp MacTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1D9508721B85003E00A3E880 /* mLamp MacUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D9508821B85003E00A3E880 /* Build configuration list for PBXNativeTarget "mLamp MacUITests" */;
+			buildPhases = (
+				1D95086F1B85003E00A3E880 /* Sources */,
+				1D9508701B85003E00A3E880 /* Frameworks */,
+				1D9508711B85003E00A3E880 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1D9508751B85003E00A3E880 /* PBXTargetDependency */,
+			);
+			name = "mLamp MacUITests";
+			productName = "mLamp MacUITests";
+			productReference = 1D9508731B85003E00A3E880 /* mLamp MacUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1D9508511B85003E00A3E880 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Miroslav Zoricak";
+				TargetAttributes = {
+					1D9508581B85003E00A3E880 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					1D9508671B85003E00A3E880 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 1D9508581B85003E00A3E880;
+					};
+					1D9508721B85003E00A3E880 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 1D9508581B85003E00A3E880;
+					};
+				};
+			};
+			buildConfigurationList = 1D9508541B85003E00A3E880 /* Build configuration list for PBXProject "mLamp Mac" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1D9508501B85003E00A3E880;
+			productRefGroup = 1D95085A1B85003E00A3E880 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D9508581B85003E00A3E880 /* mLamp Mac */,
+				1D9508671B85003E00A3E880 /* mLamp MacTests */,
+				1D9508721B85003E00A3E880 /* mLamp MacUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D9508571B85003E00A3E880 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D95085F1B85003E00A3E880 /* Assets.xcassets in Resources */,
+				1D9508621B85003E00A3E880 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D9508661B85003E00A3E880 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D9508711B85003E00A3E880 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D9508551B85003E00A3E880 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DB8B7B41B889AA100AD46FB /* ColorCircleView.swift in Sources */,
+				1D9508881B85067A00A3E880 /* LampTableDelegate.swift in Sources */,
+				1D95085D1B85003E00A3E880 /* AppDelegate.swift in Sources */,
+				1D9508861B8500C400A3E880 /* RFDuinoManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D9508641B85003E00A3E880 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D95086D1B85003E00A3E880 /* mLamp_MacTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D95086F1B85003E00A3E880 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D9508781B85003E00A3E880 /* mLamp_MacUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1D95086A1B85003E00A3E880 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D9508581B85003E00A3E880 /* mLamp Mac */;
+			targetProxy = 1D9508691B85003E00A3E880 /* PBXContainerItemProxy */;
+		};
+		1D9508751B85003E00A3E880 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D9508581B85003E00A3E880 /* mLamp Mac */;
+			targetProxy = 1D9508741B85003E00A3E880 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1D9508601B85003E00A3E880 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1D9508611B85003E00A3E880 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1D95087A1B85003E00A3E880 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1D95087B1B85003E00A3E880 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		1D95087D1B85003E00A3E880 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "mLamp Mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "sk.mirosval.mLamp-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1D95087E1B85003E00A3E880 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "mLamp Mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "sk.mirosval.mLamp-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1D9508801B85003E00A3E880 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "mLamp MacTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "sk.mirosval.mLamp-MacTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mLamp Mac.app/Contents/MacOS/mLamp Mac";
+			};
+			name = Debug;
+		};
+		1D9508811B85003E00A3E880 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "mLamp MacTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "sk.mirosval.mLamp-MacTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mLamp Mac.app/Contents/MacOS/mLamp Mac";
+			};
+			name = Release;
+		};
+		1D9508831B85003E00A3E880 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "mLamp MacUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "sk.mirosval.mLamp-MacUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "mLamp Mac";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		1D9508841B85003E00A3E880 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "mLamp MacUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "sk.mirosval.mLamp-MacUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "mLamp Mac";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D9508541B85003E00A3E880 /* Build configuration list for PBXProject "mLamp Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D95087A1B85003E00A3E880 /* Debug */,
+				1D95087B1B85003E00A3E880 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D95087C1B85003E00A3E880 /* Build configuration list for PBXNativeTarget "mLamp Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D95087D1B85003E00A3E880 /* Debug */,
+				1D95087E1B85003E00A3E880 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D95087F1B85003E00A3E880 /* Build configuration list for PBXNativeTarget "mLamp MacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D9508801B85003E00A3E880 /* Debug */,
+				1D9508811B85003E00A3E880 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D9508821B85003E00A3E880 /* Build configuration list for PBXNativeTarget "mLamp MacUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D9508831B85003E00A3E880 /* Debug */,
+				1D9508841B85003E00A3E880 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1D9508511B85003E00A3E880 /* Project object */;
+}
