@@ -9,41 +9,38 @@
 import Foundation
 import AppKit
 
-class LampTableDelegate: NSObject, NSTableViewDelegate, NSTableViewDataSource, RFDuinoManagerDelegate {
+class LampTableDelegate: NSObject, NSTableViewDelegate, NSTableViewDataSource, MLampManagerDelegate {
     
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var colorCircleView: ColorCircleView!
     
-    var rfduinoManager = RFDuinoManager()
-    var rfduinos = Array<RFDuino>()
-    var selectedRFDuino: RFDuino?
+    var lampManager = MLampManager()
+    var lamps = [MLamp]()
+    var selectedLamp: MLamp?
     
     override init() {
         super.init()
         
-        rfduinoManager.delegate = self
-        
-        rfduinoManager.startScan()
+        lampManager.delegate = self
+        lampManager.discover()
     }
     
-    func rfduinoManagerDidDiscoverPeripheral() {
-        rfduinos = rfduinoManager.rfduinos
+    func mLampDidDiscoverLamp(mlamp: MLamp) {
+        lamps = lampManager.lamps
         tableView.reloadData()
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
-        return rfduinos.count
+        return lamps.count
     }
     
     func tableView(tableView: NSTableView, objectValueForTableColumn tableColumn: NSTableColumn?, row: Int) -> AnyObject? {
-        return rfduinos[row].peripheral.name
+        return lamps[row].humanName
     }
     
     func tableViewSelectionDidChange(notification: NSNotification) {
-        let rfduino = rfduinos[tableView.selectedRow]
-        rfduinoManager.connectToRFDuino(rfduino)
-        
-        selectedRFDuino = rfduino
+        let lamp = lamps[tableView.selectedRow]
+        selectedLamp = lamp
     }
     
     @IBAction func changeLampColor(sender: AnyObject) {
@@ -51,11 +48,6 @@ class LampTableDelegate: NSObject, NSTableViewDelegate, NSTableViewDataSource, R
             return
         }
         
-        let r = UInt8(255 * color.redComponent)
-        let g = UInt8(255 * color.greenComponent)
-        let b = UInt8(255 * color.blueComponent)
-        
-        let data = NSData(bytes: [0, r, g, b] as [UInt8], length: 4)
-        selectedRFDuino?.sendData(data)
+        selectedLamp?.color = color
     }
 }

@@ -15,6 +15,9 @@
 		1D9508861B8500C400A3E880 /* RFDuinoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9508851B8500C400A3E880 /* RFDuinoManager.swift */; };
 		1D9508881B85067A00A3E880 /* LampTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9508871B85067A00A3E880 /* LampTableDelegate.swift */; };
 		1DB8B7B41B889AA100AD46FB /* ColorCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8B7B31B889AA100AD46FB /* ColorCircleView.swift */; };
+		1DE035D21B89B3AA0048F694 /* RFDuino.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE035D11B89B3AA0048F694 /* RFDuino.swift */; };
+		1DE035D61B89B4F00048F694 /* MLamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE035D51B89B4F00048F694 /* MLamp.swift */; };
+		1DE035D81B89B4FE0048F694 /* MLampManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE035D71B89B4FE0048F694 /* MLampManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		1D9508851B8500C400A3E880 /* RFDuinoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFDuinoManager.swift; sourceTree = "<group>"; };
 		1D9508871B85067A00A3E880 /* LampTableDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LampTableDelegate.swift; sourceTree = "<group>"; };
 		1DB8B7B31B889AA100AD46FB /* ColorCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCircleView.swift; sourceTree = "<group>"; };
+		1DE035D11B89B3AA0048F694 /* RFDuino.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFDuino.swift; sourceTree = "<group>"; };
+		1DE035D51B89B4F00048F694 /* MLamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLamp.swift; sourceTree = "<group>"; };
+		1DE035D71B89B4FE0048F694 /* MLampManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLampManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,11 +105,12 @@
 		1D95085B1B85003E00A3E880 /* mLamp Mac */ = {
 			isa = PBXGroup;
 			children = (
+				1DE035D31B89B3CC0048F694 /* RFDuino */,
+				1DE035D41B89B4D50048F694 /* MLamp */,
 				1D95085C1B85003E00A3E880 /* AppDelegate.swift */,
 				1D95085E1B85003E00A3E880 /* Assets.xcassets */,
 				1D9508601B85003E00A3E880 /* MainMenu.xib */,
 				1D9508631B85003E00A3E880 /* Info.plist */,
-				1D9508851B8500C400A3E880 /* RFDuinoManager.swift */,
 				1D9508871B85067A00A3E880 /* LampTableDelegate.swift */,
 				1DB8B7B31B889AA100AD46FB /* ColorCircleView.swift */,
 			);
@@ -126,6 +133,24 @@
 				1D9508791B85003E00A3E880 /* Info.plist */,
 			);
 			path = "mLamp MacUITests";
+			sourceTree = "<group>";
+		};
+		1DE035D31B89B3CC0048F694 /* RFDuino */ = {
+			isa = PBXGroup;
+			children = (
+				1DE035D11B89B3AA0048F694 /* RFDuino.swift */,
+				1D9508851B8500C400A3E880 /* RFDuinoManager.swift */,
+			);
+			name = RFDuino;
+			sourceTree = "<group>";
+		};
+		1DE035D41B89B4D50048F694 /* MLamp */ = {
+			isa = PBXGroup;
+			children = (
+				1DE035D51B89B4F00048F694 /* MLamp.swift */,
+				1DE035D71B89B4FE0048F694 /* MLampManager.swift */,
+			);
+			name = MLamp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +282,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DE035D21B89B3AA0048F694 /* RFDuino.swift in Sources */,
+				1DE035D61B89B4F00048F694 /* MLamp.swift in Sources */,
 				1DB8B7B41B889AA100AD46FB /* ColorCircleView.swift in Sources */,
+				1DE035D81B89B4FE0048F694 /* MLampManager.swift in Sources */,
 				1D9508881B85067A00A3E880 /* LampTableDelegate.swift in Sources */,
 				1D95085D1B85003E00A3E880 /* AppDelegate.swift in Sources */,
 				1D9508861B8500C400A3E880 /* RFDuinoManager.swift in Sources */,
