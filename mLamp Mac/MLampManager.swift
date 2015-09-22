@@ -9,7 +9,8 @@
 import Foundation
 
 public protocol MLampManagerDelegate {
-     func mLampDidDiscoverLamp(mlamp: MLamp)
+    func mLampDidDiscoverLamp(mlamp: MLamp)
+    func mLampDidUpdateNames()
 }
 
 public class MLampManager: RFDuinoManagerDelegate {
@@ -26,7 +27,7 @@ public class MLampManager: RFDuinoManagerDelegate {
     public func discover() {
         lamps.removeAll()
         rfduinoManager.delegate = self
-        rfduinoManager.startScan()
+        rfduinoManager.startScanWithKnownIdentifiers(Array(knownIdentifiers.keys))
     }
     
     public func getLampByIdentifier(identifier: NSUUID) -> MLamp? {
@@ -43,10 +44,26 @@ public class MLampManager: RFDuinoManagerDelegate {
         return lamps.filter({ $0.humanName == name })
     }
     
+    public func setName(name: String, forIdentifier identifier: NSUUID) {
+        let lamp = lamps.filter({ $0.identifier.isEqual(identifier) })
+        if var first = lamp.first {
+            first.humanName = name
+            knownIdentifiers[identifier] = name
+            saveKnownIdentifiers()
+            
+            delegate?.mLampDidUpdateNames()
+        } else {
+            NSLog("Trying to set name for lamp with identifier %@ failed, no such lamp", identifier.UUIDString)
+        }
+    }
+    
     public func rfduinoManagerDidDiscoverPeripheral(rfduino: RFDuino) {
         var lamp = MLamp(rfduino: rfduino)
         
         lamp.humanName = ""
+        if let name = knownIdentifiers[rfduino.peripheral.identifier] {
+            lamp.humanName = name
+        }
         
         lamps.append(lamp)
         delegate?.mLampDidDiscoverLamp(lamp)
@@ -65,7 +82,13 @@ public class MLampManager: RFDuinoManagerDelegate {
         }
         
         for identifier in dict {
-            knownIdentifiers[identifier.key as! NSUUID] = (identifier.value as! String)
+            guard let uuid = NSUUID(UUIDString: identifier.key as! String) else {
+                NSLog("Encountered an unparsable identifier while processing known lamp identifiers")
+                continue
+            }
+            
+            let name = identifier.value as! String
+            knownIdentifiers[uuid] = name
         }
     }
     
@@ -76,7 +99,7 @@ public class MLampManager: RFDuinoManagerDelegate {
         
         let dict = NSMutableDictionary()
         for identifier in knownIdentifiers {
-            dict.setValue(identifier.0.UUIDString, forKey: identifier.1)
+            dict.setValue(identifier.1, forKey: identifier.0.UUIDString)
         }
         
         dict.writeToURL(url, atomically: true)

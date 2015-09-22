@@ -27,6 +27,11 @@ class LampTableDelegate: NSObject, NSTableViewDelegate, NSTableViewDataSource, M
     
     func mLampDidDiscoverLamp(mlamp: MLamp) {
         lamps = lampManager.lamps
+        tableView?.reloadData()
+    }
+    
+    func mLampDidUpdateNames() {
+        lamps = lampManager.lamps
         tableView.reloadData()
     }
     
@@ -39,8 +44,17 @@ class LampTableDelegate: NSObject, NSTableViewDelegate, NSTableViewDataSource, M
     }
     
     func tableViewSelectionDidChange(notification: NSNotification) {
-        let lamp = lamps[tableView.selectedRow]
-        selectedLamp = lamp
+        if tableView.selectedRow >= 0 && tableView.selectedRow < lamps.count {
+            let lamp = lamps[tableView.selectedRow]
+            selectedLamp = lamp
+        }
+    }
+    
+    func tableView(tableView: NSTableView, setObjectValue object: AnyObject?, forTableColumn tableColumn: NSTableColumn?, row: Int) {
+        let lamp = lamps[row]
+        let name = object as! String
+        
+        lampManager.setName(name, forIdentifier: lamp.identifier)
     }
     
     @IBAction func changeLampColor(sender: AnyObject) {

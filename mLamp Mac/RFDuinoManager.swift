@@ -36,21 +36,22 @@ public class RFDuinoManager: NSObject, CBCentralManagerDelegate {
         centralManager.scanForPeripheralsWithServices([serviceUUID], options: options)
     }
     
+    public func startScanWithKnownIdentifiers(identifiers: [NSUUID]) {
+        let peripherals = centralManager.retrievePeripheralsWithIdentifiers(identifiers)
+        
+        for peripheral in peripherals {
+            NSLog("Found known mLamp: %@", peripheral.identifier.UUIDString)
+            addPeripheralAsRfduino(peripheral)
+        }
+        
+        startScan()
+    }
+    
     internal func connectToRFDuino(rfduino: RFDuino) {
         centralManager.connectPeripheral(rfduino.peripheral, options: nil)
     }
     
-    public func centralManager(central: CBCentralManager, didConnectPeripheral peripheral: CBPeripheral) {
-        for rfduino in rfduinos {
-            rfduino.discoverServices()
-        }
-    }
-    
-    public func centralManager(central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: NSError?) {
-        
-    }
-    
-    public func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber) {
+    internal func addPeripheralAsRfduino(peripheral: CBPeripheral) {
         var containsRfduino = false
         for r in rfduinos {
             if r.peripheral.isEqual(peripheral) {
@@ -65,6 +66,20 @@ public class RFDuinoManager: NSObject, CBCentralManagerDelegate {
             
             delegate?.rfduinoManagerDidDiscoverPeripheral(rfduino)
         }
+    }
+    
+    public func centralManager(central: CBCentralManager, didConnectPeripheral peripheral: CBPeripheral) {
+        for rfduino in rfduinos {
+            rfduino.discoverServices()
+        }
+    }
+    
+    public func centralManager(central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: NSError?) {
+        
+    }
+    
+    public func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber) {
+        addPeripheralAsRfduino(peripheral)
     }
     
     public func centralManager(central: CBCentralManager, willRestoreState dict: [String : AnyObject]) {

@@ -16,7 +16,6 @@ public enum MLampMode: UInt8 {
 
 public struct MLamp {
     public var humanName: String = ""
-    
     public var color: NSColor {
         didSet {
             guard let rfduino = backingRFDuino else {
@@ -45,5 +44,6 @@ public struct MLamp {
     init(rfduino: RFDuino) {
         self.backingRFDuino = rfduino
         self.color = NSColor.blackColor()
+        self.identifier = rfduino.peripheral.identifier
     }
 }
