@@ -45,15 +45,14 @@ public class MLampManager: RFDuinoManagerDelegate {
     }
     
     public func setName(name: String, forIdentifier identifier: NSUUID) {
-        let lamp = lamps.filter({ $0.identifier.isEqual(identifier) })
-        if var first = lamp.first {
-            first.humanName = name
-            knownIdentifiers[identifier] = name
-            saveKnownIdentifiers()
-            
-            delegate?.mLampDidUpdateNames()
-        } else {
-            NSLog("Trying to set name for lamp with identifier %@ failed, no such lamp", identifier.UUIDString)
+        for (index, lamp) in lamps.enumerate() {
+            if lamp.identifier == identifier {
+                lamps[index].humanName = name
+                knownIdentifiers[identifier] = name
+                saveKnownIdentifiers()
+                
+                delegate?.mLampDidUpdateNames()
+            }
         }
     }
     
