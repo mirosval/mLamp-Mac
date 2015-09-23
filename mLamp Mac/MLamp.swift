@@ -33,6 +33,7 @@ public struct MLamp {
             }
             
             rfduino.sendData(data)
+//            NSLog("Sent %@ to lamp %@", data, humanName)
         }
     }
     

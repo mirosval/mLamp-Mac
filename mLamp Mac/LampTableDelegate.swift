@@ -16,7 +16,7 @@ class LampTableDelegate: NSObject, NSTableViewDelegate, NSTableViewDataSource, M
     
     var lampManager = MLampManager()
     var lamps = [MLamp]()
-    var selectedLamp: MLamp?
+    var selectedLamps = [MLamp]()
     
     override init() {
         super.init()
@@ -44,9 +44,9 @@ class LampTableDelegate: NSObject, NSTableViewDelegate, NSTableViewDataSource, M
     }
     
     func tableViewSelectionDidChange(notification: NSNotification) {
-        if tableView.selectedRow >= 0 && tableView.selectedRow < lamps.count {
-            let lamp = lamps[tableView.selectedRow]
-            selectedLamp = lamp
+        selectedLamps.removeAll()
+        for lamp in PermutationGenerator(elements: lamps, indices: tableView.selectedRowIndexes) {
+            selectedLamps.append(lamp)
         }
     }
     
@@ -62,6 +62,8 @@ class LampTableDelegate: NSObject, NSTableViewDelegate, NSTableViewDataSource, M
             return
         }
         
-        selectedLamp?.color = color
+        for var lamp in selectedLamps {
+            lamp.color = color
+        }
     }
 }
