@@ -14,7 +14,7 @@ public enum MLampMode: UInt8 {
     case Hold = 1
 }
 
-public struct MLamp {
+public class MLamp: NSObject {
     public var humanName: String = ""
     public var color: NSColor {
         didSet {

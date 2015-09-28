@@ -9,9 +9,13 @@
 import Foundation
 import AppKit
 
-class LampTableDelegate: NSObject, NSTableViewDelegate, NSTableViewDataSource, MLampManagerDelegate {
+class LampCellView: NSTableCellView {
+    var lamp: MLamp?
+}
+
+class LampTableDelegate: NSObject, NSOutlineViewDelegate, NSOutlineViewDataSource, NSTextFieldDelegate, MLampManagerDelegate {
     
-    @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var outlineView: NSOutlineView!
     @IBOutlet weak var colorCircleView: ColorCircleView!
     
     var lampManager = MLampManager()
@@ -27,34 +31,80 @@ class LampTableDelegate: NSObject, NSTableViewDelegate, NSTableViewDataSource, M
     
     func mLampDidDiscoverLamp(mlamp: MLamp) {
         lamps = lampManager.lamps
-        tableView?.reloadData()
+        outlineView?.reloadData()
+        
+        outlineView?.expandItem(nil, expandChildren: true)
     }
     
     func mLampDidUpdateNames() {
         lamps = lampManager.lamps
-        tableView.reloadData()
+        outlineView.reloadData()
+        outlineView?.expandItem(nil, expandChildren: true)
     }
     
-    func numberOfRowsInTableView(tableView: NSTableView) -> Int {
-        return lamps.count
-    }
-    
-    func tableView(tableView: NSTableView, objectValueForTableColumn tableColumn: NSTableColumn?, row: Int) -> AnyObject? {
-        return lamps[row].humanName
-    }
-    
-    func tableViewSelectionDidChange(notification: NSNotification) {
-        selectedLamps.removeAll()
-        for lamp in PermutationGenerator(elements: lamps, indices: tableView.selectedRowIndexes) {
-            selectedLamps.append(lamp)
+    func outlineView(outlineView: NSOutlineView, child index: Int, ofItem item: AnyObject?) -> AnyObject {
+        if let _ = item {
+            return lamps[index]
+        } else {
+            return lampManager
         }
     }
     
-    func tableView(tableView: NSTableView, setObjectValue object: AnyObject?, forTableColumn tableColumn: NSTableColumn?, row: Int) {
-        let lamp = lamps[row]
-        let name = object as! String
+    func outlineView(outlineView: NSOutlineView, isItemExpandable item: AnyObject) -> Bool {
+        return item is MLampManager
+    }
+    
+    func outlineView(outlineView: NSOutlineView, numberOfChildrenOfItem item: AnyObject?) -> Int {
+        switch item {
+        case _ as MLampManager:
+            return lamps.count
+        default:
+            return 1
+        }
+    }
+    
+    func outlineView(outlineView: NSOutlineView, viewForTableColumn tableColumn: NSTableColumn?, item: AnyObject) -> NSView? {
+        switch item {
+        case _ as MLampManager:
+            let view = (outlineView.makeViewWithIdentifier("HeaderCell", owner: self) as! NSTableCellView)
+            view.textField?.stringValue = "Found Lamps"
+            return view
+        case let lamp as MLamp:
+            let view = (outlineView.makeViewWithIdentifier("DataCell", owner: self) as! LampCellView)
+            view.textField?.stringValue = lamp.humanName
+            view.textField?.delegate = self
+            view.lamp = lamp
+            return view
+        default:
+            return nil
+        }
+    }
+    
+    func outlineView(outlineView: NSOutlineView, isGroupItem item: AnyObject) -> Bool {
+        return item is MLampManager
+    }
+    
+    func outlineView(outlineView: NSOutlineView, shouldSelectItem item: AnyObject) -> Bool {
+        return item is MLamp
+    }
+    
+    func outlineViewSelectionDidChange(notification: NSNotification) {
+        let indexSet = self.outlineView.selectedRowIndexes
         
-        lampManager.setName(name, forIdentifier: lamp.identifier)
+        selectedLamps.removeAll()
+        indexSet.enumerateIndexesUsingBlock({ (index, stop) -> Void in
+            if let lamp = self.outlineView.itemAtRow(index) as? MLamp {
+                self.selectedLamps.append(lamp)
+            }
+        })
+    }
+    
+    override func controlTextDidEndEditing(obj: NSNotification) {
+        if let field = obj.object as? NSTextField,
+            lampCellView = field.superview as? LampCellView,
+            lamp = lampCellView.lamp {
+            lampManager.setName(field.stringValue, forIdentifier: lamp.identifier)
+        }
     }
     
     @IBAction func changeLampColor(sender: AnyObject) {
@@ -62,7 +112,7 @@ class LampTableDelegate: NSObject, NSTableViewDelegate, NSTableViewDataSource, M
             return
         }
         
-        for var lamp in selectedLamps {
+        for lamp in selectedLamps {
             lamp.color = color
         }
     }
