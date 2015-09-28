@@ -40,7 +40,7 @@ public class RFDuinoManager: NSObject, CBCentralManagerDelegate {
         let peripherals = centralManager.retrievePeripheralsWithIdentifiers(identifiers)
         
         for peripheral in peripherals {
-            NSLog("Found known mLamp: %@", peripheral.identifier.UUIDString)
+//            NSLog("Found known mLamp: %@", peripheral.identifier.UUIDString)
             addPeripheralAsRfduino(peripheral)
         }
         

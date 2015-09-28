@@ -80,6 +80,8 @@ public class RFDuino: NSObject, CBPeripheralDelegate {
             for data in dataQueue {
                 peripheral.writeValue(data, forCharacteristic: characteristic, type: CBCharacteristicWriteType.WithoutResponse)
             }
+            
+            dataQueue.removeAll()
         }
     }
 }
